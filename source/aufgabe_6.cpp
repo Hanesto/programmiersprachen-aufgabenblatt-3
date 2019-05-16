@@ -1,3 +1,6 @@
+#define CATCH_CONFIG_RUNNER
+
+#include <catch2/catch.hpp>
 #include <vector>
 #include <algorithm>
 #include <string>
@@ -5,10 +8,10 @@
 #include "vec2.hpp"
 #include "color.hpp"
 
-int main()
-{
-    std::vector<Circle> sorted_circles;
-    
+std::vector<Circle> sorted_circles;
+
+void circle_sorting()
+{    
     Vec2 center;
     Vec2 center2 = {3, 2};
     Color color;
@@ -20,8 +23,15 @@ int main()
     sorted_circles.push_back(c_1);
     sorted_circles.push_back(c_2);
     sorted_circles.push_back(c_3);
+}
 
+TEST_CASE("Circle Sorting 1")
+{
     std::sort(sorted_circles.begin(), sorted_circles.end());
+    REQUIRE(std::is_sorted(sorted_circles.begin() , sorted_circles.end()));
+}
 
-    return 0;
+int main(int argc, char* argv[])
+{
+  return Catch::Session().run(argc, argv);
 }

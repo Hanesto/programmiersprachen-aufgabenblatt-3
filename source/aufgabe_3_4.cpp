@@ -38,8 +38,3 @@ int main()
         }
     }
 }
-
-bool operator< (const Circle circ1, const Circle circ2)
-{
-    return true;
-}

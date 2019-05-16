@@ -1,6 +1,7 @@
 #include <list>
 #include <set>
 #include <map>
+#include <vector>
 #include <iterator>
 #include <iostream>
 #include <cstdlib>
@@ -25,7 +26,6 @@ void insertRandoms()
 
 int main()
 {
-
     insertRandoms();
 
     int zahlen = randNumbers.size();
@@ -58,7 +58,6 @@ int main()
     }
     std::cout << " " << std::endl;
     
-
     std::map<int, int> haufigkeit;
     int nmbr;
     int temp;
@@ -72,10 +71,13 @@ int main()
     std::cout << "\nDas ist die Häufigkeitsverteilung: \n"; 
     std::cout << "\tZahl\tHäufigkeit\n"; 
     for (itr = haufigkeit.begin(); itr != haufigkeit.end(); ++itr) { 
-        std::cout << '\t' << itr->first 
-             << '\t' << itr->second << '\n'; 
+        std::cout << '\t' << itr->first << '\t' << itr->second << '\n'; 
     } 
     std::cout << std::endl; 
+
+    //Aufgabe 3.10
+    std::vector<int> v_0(100); 
+    std::copy(liste.begin(), liste.end(), v_0.begin());
 
     return 0;
 }
