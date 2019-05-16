@@ -38,10 +38,57 @@ std::string Circle::getName()
     return name_;
 }
 
+int Circle::getRadius()
+{
+    return radius_;
+}
+
 //Überlädt den << Operator um Kreise ausgeben zu können
 std::ostream& operator<< (std::ostream& os, Circle const& circle)
 {
     //temporäres Objekt, um die Übertragung als const& zu ermöglichen
     Circle temp = circle;
     temp.print();
+}
+
+bool operator<(Circle const& circle1, Circle const& circle2)
+{
+    Circle circ1 = circle1;
+    Circle circ2 = circle2;
+
+    if(circ1.getRadius() < circ2.getRadius())
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool operator>(Circle const& circle1, Circle const& circle2)
+{
+    Circle circ1 = circle1;
+    Circle circ2 = circle2;
+
+    if(circ1.getRadius() > circ2.getRadius())
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool operator==(Circle const& circle1, Circle const& circle2)
+{
+    Circle circ1 = circle1;
+    Circle circ2 = circle2;
+
+    if(circ1.getRadius() == circ2.getRadius())
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
 }

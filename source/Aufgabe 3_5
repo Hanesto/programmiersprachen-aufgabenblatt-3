@@ -1,0 +1,11 @@
+std :: map < string , int > matrikelnummern ;
+// Hinzufuegen von vielen Studenten
+matrikelnummern [ " Max Mustermann " ] = 12345;
+matrikelnummern [ " Erika Mustermann " ] = 23523;
+// ...
+exmatrikulation ( matrikelnummer [ " Fred Fuchs " ]);
+
+//Es wird hier direkt auf die Map zugegriffen und nicht über die auch verfügbare insert() Funktion
+//Somit kann es passieren, dass eine Person mit dem gleichen Namen überschrieben wird
+//Um eine Map zu durchsuchen gibt es die Funktion find(const key) bei der die Map nach einem 
+//Element mit dem übergebenen key durchsucht wird

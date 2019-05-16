@@ -14,6 +14,7 @@ public:
     float circumference();
     void print();
     std::string getName();
+    int getRadius();
 
 private:
     Color color_;
@@ -24,5 +25,9 @@ private:
 };
 
 std::ostream& operator<< (std::ostream& os, Circle const& circle); 
+
+bool operator<(Circle const& circle1, Circle const& circle2);
+bool operator>(Circle const& circle1, Circle const& circle2);
+bool operator==(Circle const& circle1, Circle const& circle2);
 
 #endif
