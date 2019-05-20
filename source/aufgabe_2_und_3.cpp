@@ -1,3 +1,5 @@
+#define CATCH_CONFIG_RUNNER
+#include <catch2/catch.hpp>
 #include <list>
 #include <set>
 #include <map>
@@ -24,7 +26,7 @@ void insertRandoms()
     }
 }
 
-int main()
+int analyzeRandoms()
 {
     insertRandoms();
 
@@ -57,14 +59,30 @@ int main()
         } 
     }
     std::cout << " " << std::endl;
-    
+
+    //Aufgabe 3.3
+    //Es bietet sich hier an eine Map zu benutzen, da Elemente in der Map als Paare gespeichert werden
+    //So ist es am einfachsten Zahl und Häufigkeit zu kombinieren
+
     std::map<int, int> haufigkeit;
-    int nmbr;
-    int temp;
-    for (int i = 1; i <= 100; i++)
+
+    itr = randNumbers.begin();
+    std::list<unsigned int>::iterator it; 
+    int anzahl = 0;
+    for (int i = 0; i < 100; i++)
     {
-       // nmbr = liste.count(i);
-        haufigkeit.insert(std::pair<int, int>(temp, nmbr)); 
+       int zahl = *itr;
+
+       for (it = liste.begin(); it != liste.end(); ++it)
+       {
+          if(*it == *itr)
+          {
+            anzahl++;
+          }
+       }
+       haufigkeit.insert(std::pair<int, int>(*itr, anzahl)); 
+       anzahl = 0;
+       ++itr;
     }
 
     std::map<int, int>::iterator itr; 
@@ -75,9 +93,28 @@ int main()
     } 
     std::cout << std::endl; 
 
+    return 0;
+}
+
+TEST_CASE("Random numbers")
+{
+    analyzeRandoms();
+
     //Aufgabe 3.10
     std::vector<int> v_0(100); 
     std::copy(liste.begin(), liste.end(), v_0.begin());
 
-    return 0;
+    std::list<unsigned int>::iterator it = liste.begin(); 
+    std::vector<int>::iterator itr = v_0.begin();
+    for (int i = 0; i < 100; i++)
+    {
+        REQUIRE(*it == *itr);
+        it++;
+        itr++;
+    }
+}
+
+int main(int argc, char * argv [])
+{
+return Catch::Session().run(argc, argv);
 }

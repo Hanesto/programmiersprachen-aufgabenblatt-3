@@ -28,6 +28,29 @@ void circle_sorting()
 TEST_CASE("Circle Sorting 1")
 {
     std::sort(sorted_circles.begin(), sorted_circles.end());
+    
+    REQUIRE(std::is_sorted(sorted_circles.begin() , sorted_circles.end()));
+}
+
+//Aufgabe 3.7
+TEST_CASE("Circle Sorting w. Lambda")
+{
+    std::sort(sorted_circles.begin(), sorted_circles.end(), 
+    [] (Circle const& circ1, Circle const& circ2) -> bool{return (circ1 < circ2);});
+
+    REQUIRE(std::is_sorted(sorted_circles.begin() , sorted_circles.end()));
+}
+
+//Aufgabe 3.8
+bool sort(Circle const& circ1, Circle const& circ2)
+{
+  return (circ1 < circ2);
+}
+
+TEST_CASE("Circle Sorting w. Funktor")
+{
+    std::sort(sorted_circles.begin(), sorted_circles.end(), sort);
+
     REQUIRE(std::is_sorted(sorted_circles.begin() , sorted_circles.end()));
 }
 

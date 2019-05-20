@@ -13,3 +13,9 @@ add_executable(Aufgabe_6
 )
 
 add_executable(Aufgabe_9 aufgabe_9.cpp)
+
+add_executable(Aufgabe_11 aufgabe_11.cpp)
+
+add_executable(Aufgabe_12 aufgabe_12.cpp)
+
+#add_executable(Aufgabe_13 aufgabe_13.cpp)
