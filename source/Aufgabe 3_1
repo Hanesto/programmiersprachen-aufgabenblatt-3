@@ -1,19 +1,21 @@
-//Sequenzielle Container sind Container, deren Elemente so geordnet werden, wie sie hinzugefügt wurden.
+//Sequenzielle Container sind Container, deren Elemente so geordnet werden,
+//wie sie hinzugefügt wurden. Außerdem müssen alle Elemente den gleichen Typ haben
 //Dazu gehören:
 //Arrays
 //Vektoren
 //Listen
 
-//Assoziative Container speichern ihre Elemente der Größe nach, wodurch diese einfacher zu durchsuchen sind.
+//Assoziative Container speichern ihre Elemente der Größe nach, wodurch
+//diese einfacher zu durchsuchen sind. Außerdem exisiert immer ein key für ein Element
 //Dazu gehören:
-//Sets
-//Maps
+//Sets (Multi-)
+//Maps (Multi-)
 
 //Speichern der Punkte eines Polygons
-//Ist als Array, aber auch als Map möglich
+//Als Map für zweidimensionale Koordinaten, auch als zweidimensionales Array möglich
 
 //Zuordnung von Farbnamen und entsprechenden RGB-Werten
 //Hier würde sich eine Map anbieten, so kann jedem Farbnamen ein entsprechender Schlüssel zugeordnet werden
 
 //FIFO-Warteschlange von Druckaufträgen
-//Auch hier ist die Reihenfolge wichtig, also auch ein Sequenzieller Container, z.B. eine Queue
+//Hier ist die Reihenfolge wichtig, also ein Sequenzieller Container, z.B. eine Liste oder ein Vektor

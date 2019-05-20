@@ -11,10 +11,11 @@ class Circle
 public:
     Circle();
     Circle(Vec2 const& center, int radius_, Color const& color, std::string const& name);
-    float circumference();
+    Circle(int radius_);
+    const float circumference();
     void print();
-    std::string getName();
-    int getRadius();
+    const std::string getName();
+    const int getRadius();
 
 private:
     Color color_;

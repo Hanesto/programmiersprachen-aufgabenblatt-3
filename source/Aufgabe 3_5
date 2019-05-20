@@ -1,9 +1,9 @@
-std :: map < string , int > matrikelnummern ;
+std::map<string, int> matrikelnummer;
 // Hinzufuegen von vielen Studenten
-matrikelnummern [ " Max Mustermann " ] = 12345;
-matrikelnummern [ " Erika Mustermann " ] = 23523;
+matrikelnummern ["Max Mustermann"] = 12345;
+matrikelnummern ["Erika Mustermann"] = 23523;
 // ...
-exmatrikulation ( matrikelnummer [ " Fred Fuchs " ]);
+exmatrikulation (matrikelnummer["Fred Fuchs"]);
 
 //Es wird hier direkt auf die Map zugegriffen und nicht über die auch verfügbare insert() Funktion
 //Somit kann es passieren, dass eine Person mit dem gleichen Namen überschrieben wird

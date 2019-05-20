@@ -17,7 +17,13 @@ Circle::Circle(Vec2 const& center, int radius, Color const& color, std::string c
     name_ = name;
 }
 
-float Circle::circumference()
+Circle::Circle(int radius)
+{
+    center_ = {0, 0};
+    radius_ = radius;
+}
+
+const float Circle::circumference()
 {
     float umfang;
     umfang = 2 * M_PI * radius_;
@@ -33,12 +39,12 @@ void Circle::print()
     std::cout <<  "Farbe\t" << color_.r << "\t" <<  color_.g << "\t" <<  color_.b << std::endl;
 }
 
-std::string Circle::getName()
+const std::string Circle::getName()
 {
     return name_;
 }
 
-int Circle::getRadius()
+const int Circle::getRadius()
 {
     return radius_;
 }
